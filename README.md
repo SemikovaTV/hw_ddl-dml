@@ -1,1 +1,55 @@
-# hw_ddl-dml
+# Домашнее задание к занятию «Работа с данными (DDL/DML)» - Семикова Т.В. FOPS-9
+### Задание 1
+1.1. Поднимите чистый инстанс MySQL версии 8.0+. Можно использовать локальный сервер или контейнер Docker.
+![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/2.jpg)
+
+1.2. Создайте учётную запись sys_temp. 
+
+1.3. Выполните запрос на получение списка пользователей в базе данных. (скриншот)
+![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/1.jpg)
+
+1.4. Дайте все права для пользователя sys_temp. 
+
+1.5. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
+![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/4.jpg)
+1.6. Переподключитесь к базе данных от имени sys_temp.
+Для смены типа аутентификации с sha2 используйте запрос: 
+```sql
+ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/3.jpg)
+1.6. По ссылке https://downloads.mysql.com/docs/sakila-db.zip скачайте дамп базы данных.
+
+1.7. Восстановите дамп в базу данных.
+![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/5.jpg)
+
+1.8. При работе в IDE сформируйте ER-диаграмму получившейся базы данных. При работе в командной строке используйте команду для получения всех таблиц базы данных. (скриншот)
+
+![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/6.jpg)
+
+![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/7.jpg)
+
+![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/8.jpg)
+
+### Задание 2
+Составьте таблицу, используя любой текстовый редактор или Excel, в которой должно быть два столбца: в первом должны быть названия таблиц восстановленной базы, во втором названия первичных ключей этих таблиц. Пример: (скриншот/текст)
+```
+Название таблицы | Название первичного ключа
+customer         | customer_id
+```
+![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/9.jpg)
+
+
+## Дополнительные задания (со звёздочкой*)
+Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
+
+### Задание 3*
+3.1. Уберите у пользователя sys_temp права на внесение, изменение и удаление данных из базы sakila.
+
+Необходимо пользователю root предоставить все права для работы с БД sakila, а после выполнить команду:
+
+REVOKE INSERT,UPDATE,DELETE,ALTER,DROP ON `sakila_db`.* FROM 'sys_temp'@'localhost';
+
+3.2. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
+
+![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/10.jpg)
