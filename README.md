@@ -37,7 +37,7 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 Название таблицы | Название первичного ключа
 customer         | customer_id
 ```
-![alt text](https://github.com/SemikovaTV/hw_ddl-dml/blob/main/9.jpg)
+
 
 
 ## Дополнительные задания (со звёздочкой*)
